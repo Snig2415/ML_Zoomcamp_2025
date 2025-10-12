@@ -1,1 +1,10 @@
+Module 1: Introduction to Machine Learning from MLZoomcamp -DataTalksClub 
+
+This first module was a solid foundation for modern ML engineering. It covered:
+🔹 Difference between rule-based systems and machine learning — and why adaptability matters
+🔹 Supervised learning types (regression, classification, ranking)
+🔹 The CRISP-DM framework for end-to-end ML project cycles
+🔹 Model selection and validation — splitting train/validation/test data the right way
+🔹 Practical setup with Python, Jupyter, and Conda environments
+🔹 Quick refreshers on NumPy, Pandas, and linear algebra fundamentals
 
