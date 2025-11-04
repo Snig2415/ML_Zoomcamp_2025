@@ -1,4 +1,4 @@
-Summary Checklist
+Summary Checklist<br>
  Understand train/val/test split and why it's important
  Know how to handle missing values properly
  Implement linear regression from scratch using NumPy
@@ -10,7 +10,7 @@ Summary Checklist
  Practice feature engineering techniques
  Combine train+val for final model before testing
  
-Overview
+Overview<BR>
 Linear Regression is a supervised machine learning algorithm used to predict continuous numerical values. In this module, we work on a Car Price Prediction Project to understand how to:
 
 Prepare and explore data
