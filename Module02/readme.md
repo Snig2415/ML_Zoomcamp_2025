@@ -74,20 +74,20 @@ Recap of key concepts<BR>
 ** Common pitfalls to avoid?**<BR>
 A:
 
-Data Leakage: Never use validation/test data to compute statistics (mean, std)
-Not Shuffling: Always shuffle before splitting
-Overfitting: Use regularization and validation
-Wrong Evaluation: Don't evaluate on training data
-Forgetting Bias Term: Always include w₀ (intercept)
-Singular Matrix: Use regularization if XᵀX is not invertible
-Not Scaling: Consider normalizing features for better numerical stability
+Data Leakage: Never use validation/test data to compute statistics (mean, std)<BR>
+Not Shuffling: Always shuffle before splitting<BR>
+Overfitting: Use regularization and validation<BR>
+Wrong Evaluation: Don't evaluate on training data<BR>
+Forgetting Bias Term: Always include w₀ (intercept)<BR>
+Singular Matrix: Use regularization if XᵀX is not invertible<BR>
+Not Scaling: Consider normalizing features for better numerical =stability<BR>
 
-Quick Reference Formulas
-Concept	Formula
-Linear Regression	y = w₀ + w₁x₁ + w₂x₂ + ... + wₙxₙ
-Normal Equation	w = (XᵀX)⁻¹Xᵀy
-Ridge Regression	w = (XᵀX + rI)⁻¹Xᵀy
-RMSE	√(mean((y_true - y_pred)²))
-MSE	mean((y_true - y_pred)²)
-MAE	mean(|y_true - y_pred|)
-R² Score	1 - (SS_res / SS_tot)
+Quick Reference Formulas<BR>
+Concept	Formula<BR>
+Linear Regression	y = w₀ + w₁x₁ + w₂x₂ + ... + wₙxₙ<BR>
+Normal Equation	w = (XᵀX)⁻¹Xᵀy<BR>
+Ridge Regression	w = (XᵀX + rI)⁻¹Xᵀy<BR>
+RMSE	√(mean((y_true - y_pred)²))<BR>
+MSE	mean((y_true - y_pred)²)<BR>
+MAE	mean(|y_true - y_pred|)<BR>
+R² Score	1 - (SS_res / SS_tot)<BR>
