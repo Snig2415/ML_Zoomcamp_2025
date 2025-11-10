@@ -1,17 +1,57 @@
-Breakdown of Module 4: Model Evaluation from the Machine Learning Zoomcamp notebook:
+**Typical Steps in Module 3**
 
-Train/Test Split – Split your dataset into training and test sets to evaluate how your model performs on unseen data.
+**1. Data Preparation:**
 
-Model Training – Train a logistic regression model using the training data.
+Clean the data; handle missing values.
 
-Predict Probabilities – Use .predict_proba() to get churn probabilities (e.g., how likely a customer is to churn).
+Split into train/validation/test sets.
 
-Evaluation Metrics – Use metrics like accuracy, precision, recall, F1, and ROC AUC.
+Separate features (categorical + numerical) and target (churn).
 
-ROC Curve – Plot True Positive Rate vs False Positive Rate to visualize performance.
+**2. Exploratory Data Analysis (EDA):**
 
-Choosing Thresholds – Learn how adjusting probability cutoffs changes accuracy and recall.
+Look at distributions of features.
 
-Cross-Validation – Use multiple folds to get stable, averaged performance scores.
+Calculate churn rates by category.
 
-Final Evaluation – Select the model and threshold that balance performance metrics best.
+Compute risk ratios, mutual information, correlation with the target.
+
+**3. Feature Engineering & Encoding:**
+
+One-hot encode categorical features.
+
+Scale/transform numerical features if needed.
+
+Combine into a matrix ready for model training.
+
+**4. Model Training:**
+
+Instantiate and train logistic regression (or another classifier).
+
+Fit on training data, validate on separate split.
+
+**5. Model Interpretation & Evaluation:**
+
+Inspect model intercept and coefficients to see which features push up/down the churn probability.
+
+Evaluate performance: accuracy, and check how many correct vs incorrect predictions.
+
+**6. Making Predictions & Using the Model:**
+
+Use the trained model to predict on new/unseen data.
+
+Use probability outputs and decide on a threshold for classification (e.g., churn if p ≥ 0.5).
+
+Understand business implications of predictions: false positives vs false negatives.
+
+**-> Key Takeaway**
+
+Even a simple model like logistic regression becomes powerful when you:
+
+Prepare your data well (cleaning + features),
+
+Encode categories correctly
+
+Interpret what the model is doing (which features matter), and
+
+Validate it properly (using separate data).
