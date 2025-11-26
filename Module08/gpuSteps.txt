@@ -1,0 +1,61 @@
+When you need GPU, upload the notebook to Colab
+
+Method A (recommended): Direct upload
+Go to https://colab.research.google.com/
+Click Upload
+Select your .ipynb
+Method B: Save VS Code notebook to Google Drive
+If you keep your repo in:
+MyDrive/MLZoomcamp2025/
+→ you can open the same file directly in Colab since it's synced.
+
+Step 3 — Turn on GPU in Colab
+
+In Colab:
+Go to Runtime
+Choose Change runtime type
+
+Set:
+Hardware accelerator → GPU
+GPU type: usually T4, sometimes L4
+Now Colab will run your code on GPU.
+
+Step 4 — After running GPU-heavy cells, download/sync results
+
+You have 2 ways:
+
+Option A — Download processed notebook back to VS Code
+Click:
+File → Download .ipynb
+Replace your local notebook with this updated one.
+
+Option B — Use Google Drive auto-sync (no downloading needed)
+
+In Colab, mount drive:
+
+from google.colab import drive
+drive.mount('/content/drive')
+Then save your notebook in:
+/content/drive/MyDrive/MLZoomcamp2025/
+Whatever changes you make will instantly appear in your Google Drive → VS Code folder.
+
+NOTE:
+For training deep models
+
+Run in Colab with GPU.
+
+For EDA, feature engineering, writing code
+
+Do in VS Code.
+
+For saving your Colab GPU model
+
+Use:
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+
+Then save:
+
+model.save('/content/drive/MyDrive/MLZoomcamp2025/models/my_model.h5')

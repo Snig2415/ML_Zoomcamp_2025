@@ -1,0 +1,71 @@
+Summary
+Step	Explanation
+Import Xception + helpers	Load pretrained model + tools
+Build model with imagenet weights	Get a powerful CNN for free
+Expand image to batch	Model requires (batch, H, W, C)
+Preprocess input	Make image match the model’s training format
+model.predict	Output = probabilities for 1000 ImageNet classes
+decode_predictions	Convert numeric output → human labels
+No t-shirt label	Because ImageNet does not include it
+Solution: Transfer Learning	Use Xception base + custom classifier
+
+8.5 Transfer Learning
+
+| Step                    | What Happens                 |
+| ----------------------- | ---------------------------- |
+| Load images             | Resize, batch, one-hot label |
+| Create Xception base    | Pretrained on ImageNet       |
+| Freeze base_model       | Keep learned visual features |
+| Add pooling + Dense(10) | Custom classifier            |
+| Compile                 | Use crossentropy + Adam      |
+| Train                   | Only classifier learns       |
+| Evaluate                | Check validation accuracy    |
+
+
+                   ┌───────────────────────────────┐
+                   │   Clothing Dataset (Images)   │
+                   └───────────────┬───────────────┘
+                                   │
+                                   ▼
+                     ┌────────────────────────┐
+                     │ ImageDataGenerator     │
+                     │ - loads images         │
+                     │ - resizes (150x150)    │
+                     │ - batches (32)         │
+                     │ - preprocesses input   │
+                     └───────────────┬────────┘
+                                     │
+                                     ▼
+                   ┌────────────────────────────────┐
+                   │  Pretrained Xception (Frozen)  │
+                   │  - feature extractor           │
+                   │  - trained on ImageNet         │
+                   │  - NOT trained during our run  │
+                   └───────────────┬────────────────┘
+                                   │
+                                   ▼
+                ┌────────────────────────────────────┐
+                │ GlobalAveragePooling2D             │
+                │ - compress feature maps            │
+                │ - output = 2048-dim vector         │
+                └──────────────────┬─────────────────┘
+                                   │
+                                   ▼
+                      ┌─────────────────────────┐
+                      │ Dense Layer (10 units) │
+                      │ - learns clothing types│
+                      │ - softmax / logits     │
+                      └─────────────┬──────────┘
+                                    │
+                                    ▼
+                     ┌────────────────────────────────┐
+                     │ Training                       │
+                     │ - only top Dense layer trains  │
+                     │ - base model stays frozen      │
+                     └────────────────────────────────┘
+                                    │
+                                    ▼
+                      ┌──────────────────────────────┐
+                      │ Evaluation                    │
+                      │ - validation accuracy         │
+                      └──────────────────────────────┘
