@@ -15,3 +15,11 @@ Module 9: Serverless Deep Learning <br>
 Module 10: Kubernetes and TensorFlow Serving <br>
 Module 11: KServe <br>
 
+## 🚀 Run Module 08 Notebook in Google Colab
+
+Click the badge below to open your Deep Learning notebook directly in Google Colab (GPU enabled):
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+https://colab.research.google.com/github/Snig2415/ML_Zoomcamp_2025/blob/main/Module08/deepLearn.ipynb)
+
+
