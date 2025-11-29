@@ -208,3 +208,5 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+Module08/clothing-dataset-small.zip
+*.zip
